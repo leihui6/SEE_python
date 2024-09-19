@@ -402,3 +402,36 @@ FodyWeavers.xsd
 *.pcd 
 test.txt
 tmp*.txt
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+
+# Build directories
+build/
+_build/
+CMakeScripts/
+
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Executables and libraries
+*.exe
+*.out
+*.app
+*.lib
+*.a
+*.so
+*.dylib
+*.dll
+
+# Other generated files
+*.dir/

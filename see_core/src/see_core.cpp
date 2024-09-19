@@ -154,7 +154,7 @@ void SeeCore::ProcessNewPointCloud(SeePointCloudPtr see_pt_dash_ptr) {
 
   cout << "Classifying " << new_count << " new points" << std::endl;
 #pragma omp parallel for
-  for (size_t i = start_idx; i < see_pt_ptr_->size(); i++) {
+  for (long long i = start_idx; i < see_pt_ptr_->size(); i++) {
     if (ProcessPoint(i)) {
       QueueNeighbours(i, frontier_pt, R_idx);
       QueueNeighbours(i, outlier_pt, R_idx);
@@ -164,7 +164,7 @@ void SeeCore::ProcessNewPointCloud(SeePointCloudPtr see_pt_dash_ptr) {
 
   cout << "Reclassifying " << R_idx.size() << " existing points" << std::endl;
 #pragma omp parallel for
-  for (size_t i = 0; i < R_idx.size(); i++) {
+  for (long long i = 0; i < R_idx.size(); i++) {
     ProcessPoint(R_idx[i]);
   }
 

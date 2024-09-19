@@ -2,24 +2,31 @@
 
 ## Description
 
-SEE++ is a density-based Next Best View (NBV) planning approach for obtaining 3D
-scene observations.
+SEE++ is a density-based Next Best View (NBV) planning approach for obtaining 3D scene observations.
 
-**This repository is aimed at build a python for [SEE](https://github.com/robotic-esp/see-public). In addition, it provides a Windows version as well.**
+**This repository provides a Python interface for the [SEE](https://github.com/robotic-esp/see-public) library. Additionally, it includes a Windows-compatible version.**
 
 ## Installation
 
-*built on C++ 14*
+*Built using C++ 14.*
 
-### Python PIP
+### Python (or via PIP)
 
-// TODO
+``` shell
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release
+```
+You can import the `pysee.pyd` in `build/Release` as `import pysee`
 
-### Compiler on Windows
+### Compiling on Windows
 
 - Visual Studio 2022 x64
 
 ## Usage
+
+### C++ Example
 
 ``` C++
 #include "SEE.h"
@@ -55,7 +62,9 @@ int main(int argc, char* argv[])
 }
 ```
 
-More definition can be found in `./test_main.cpp`
+For additional examples, refer to `./test_main.cpp`
+
+### Python Example
 
 ```Python
 import pysee
@@ -78,7 +87,7 @@ print(f"Next view: {nbv}")
 
 ## Dependencies
 
-// TODO: more details
+// TODO: Provide more detailed instructions for installing dependencies.
 
 - PCL 1.14.1
 - [NLOPT](https://github.com/stevengj/nlopt)
@@ -86,9 +95,11 @@ print(f"Next view: {nbv}")
 
 ## Project Original Owners
 
-Rowan Border <rborder@robots.ox.ac.uk>
+- Rowan Border <rborder@robots.ox.ac.uk>
 
-Here it was modified by <leihui@mpe.au.dk>
+Modified by:
+
+- Leihui Li <leihui@mpe.au.dk>
 
 ## References
 
