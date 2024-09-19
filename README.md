@@ -6,6 +6,21 @@ SEE++ is a density-based Next Best View (NBV) planning approach for obtaining 3D
 
 **This repository provides a Python interface for the [SEE](https://github.com/robotic-esp/see-public) library. Additionally, it includes a Windows-compatible version.**
 
+## Dependencies
+
+- [PCL 1.14.1](https://github.com/PointCloudLibrary/pcl/releases)
+  - You need to fix the compatibility problem of FLANN with C++ 14.
+  - [**ACTION**] Name `PCL` in your environment.
+- [NLOPT](https://github.com/stevengj/nlopt)
+  - Install [NLOPT](https://github.com/stevengj/nlopt) by the given link and compile locally.
+  - [**ACTION**] Name `NLOPT` in your environment.
+- [Lemon](https://github.com/seqan/lemon)
+  - Header-only, located in the `./3rdParty/` directory.
+- [nlohmann Json](https://github.com/nlohmann/json)
+  - Header-only, located in the `./3rdParty/` directory.
+- [pybind11](https://github.com/pybind/pybind11)
+  - Header-only, located in the `./3rdParty/` directory.
+
 ## Installation
 
 *Built using C++ 14.*
@@ -18,7 +33,10 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release
 ```
-You can import the `pysee.pyd` in `build/Release` as `import pysee`
+
+// Via pip: TODO
+
+You can import the `pysee.pyd` file located in `build/Release` using `import pysee`. If you encounter any issues related to `dll` files, please refer to the `./all-in-one/*.dll` directory.
 
 ### Compiling on Windows
 
@@ -84,14 +102,6 @@ nbv = see.search_nbv_once(points, current_v)
 
 print(f"Next view: {nbv}")
 ```
-
-## Dependencies
-
-// TODO: Provide more detailed instructions for installing dependencies.
-
-- PCL 1.14.1
-- [NLOPT](https://github.com/stevengj/nlopt)
-- [Lemon](https://github.com/seqan/lemon)
 
 ## Project Original Owners
 
