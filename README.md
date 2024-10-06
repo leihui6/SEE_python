@@ -25,7 +25,9 @@ SEE++ is a density-based Next Best View (NBV) planning approach for obtaining 3D
 
 *Built using C++ 14.*
 
-### Python
+### Compiling
+
+Python version: 3.8+
 
 ``` shell
 mkdir build
