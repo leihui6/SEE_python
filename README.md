@@ -6,7 +6,7 @@ SEE++ is a density-based Next Best View (NBV) planning approach for obtaining 3D
 
 **This repository provides a Python interface for the [SEE](https://github.com/robotic-esp/see-public) library. Additionally, it includes a Windows-compatible version.**
 
-## Dependencies
+## Dependencies (Windows)
 
 - [PCL 1.14.1](https://github.com/PointCloudLibrary/pcl/releases)
   - You need to fix the compatibility problem of FLANN with C++ 14.
@@ -25,7 +25,7 @@ SEE++ is a density-based Next Best View (NBV) planning approach for obtaining 3D
 
 *Built using C++ 14.*
 
-### Python (or via PIP)
+### Python
 
 ``` shell
 mkdir build
@@ -34,13 +34,23 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release
 ```
 
-// Via pip: TODO
-
-You can import the `pysee.pyd` file located in `build/Release` using `import pysee`. If you encounter any issues related to `dll` files, please refer to the `./all-in-one/*.dll` directory.
-
 ### Compiling on Windows
 
 - Visual Studio 2022 x64
+
+You can import the `pysee.pyd` file located in `build/Release` using `import pysee`. If you encounter any issues related to `dll` files, please refer to the `./all-in-one/*.dll` directory.
+
+### Compiling on Linux
+
+- Ubuntu 20.04
+- g++ 9.4.0
+- [NLOPT](https://github.com/stevengj/nlopt): follow the instructions on its official website.
+- PCL 1.10.1 (default): `sudo apt-get install libpcl-dev pcl-tools bu`
+
+Note: you need to address the compatibility issue of `boost` and `std::` when compiling the `SEE` library. The solution is to replace the `std::make_shared` with `boost::make_shared`.
+
+
+You can import the `pysee.so` file located in build by using `import pysee`. 
 
 ## Usage
 
