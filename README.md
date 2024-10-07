@@ -47,7 +47,7 @@ You can import the `pysee.pyd` file located in `build/Release` using `import pys
 - Ubuntu 20.04
 - g++ 9.4.0
 - [NLOPT](https://github.com/stevengj/nlopt): follow the instructions on its official website.
-- PCL 1.10.1 (default): `sudo apt-get install libpcl-dev pcl-tools bu`
+- PCL 1.10.1 (default): `sudo apt-get install libpcl-dev pcl-tools`
 
 Note: you need to address the compatibility issue of `boost` and `std::` when compiling the `SEE` library. The solution is to replace the `std::make_shared` with `boost::make_shared`.
 
